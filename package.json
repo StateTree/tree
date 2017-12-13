@@ -2,7 +2,7 @@
   "name": "tree",
   "version": "2.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "lib/tree.js",
   "scripts": {
     "build": "webpack --progress --config webpack.config.js",
     "lint": "eslint ./src --ext .js --cache --fix --ext .jsx --cache --fix",
