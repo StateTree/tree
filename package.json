@@ -1,36 +1,36 @@
 {
-  "name":"tree",
-  "version":"1.0.0",
-  "description":"",
-  "main":"index.js",
-  "scripts":{
-    "build":"webpack --progress --config webpack.config.js",
-    "lint":"eslint ./src --ext .js --cache --fix --ext .jsx --cache --fix",
-    "postbuild":"node scripts/postbuild.js",
-    "postversion":"git push origin HEAD --follow-tags",
-    "prebuild":"rimraf lib && rimraf demo",
-    "release:breakingchange":"npm version major -m 'Bumped major version number'",
-    "release:bugfix":"npm version patch -m 'Bumped patch version number'",
-    "release:feature":"npm version minor -m 'Bumped minor version number'",
-    "release:master":"git checkout master && git merge --squash develop && git commit -am 'Release Commit' && git push && git checkout develop",
-    "start":"webpack-dev-server --progress --config webpack.config.js --open"
+  "name": "tree",
+  "version": "2.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --progress --config webpack.config.js",
+    "lint": "eslint ./src --ext .js --cache --fix --ext .jsx --cache --fix",
+    "postbuild": "node scripts/postbuild.js",
+    "postversion": "git push origin HEAD --follow-tags",
+    "prebuild": "rimraf lib && rimraf demo",
+    "release:breakingchange": "npm version major -m 'Bumped major version number'",
+    "release:bugfix": "npm version patch -m 'Bumped patch version number'",
+    "release:feature": "npm version minor -m 'Bumped minor version number'",
+    "release:master": "git checkout master && git merge --squash develop && git commit -am 'Release Commit' && git push && git checkout develop",
+    "start": "webpack-dev-server --progress --config webpack.config.js --open"
   },
-  "author":"",
-  "license":"ISC",
-  "devDependencies":{
-    "babel-cli":"^6.24.1",
-    "babel-core":"^6.25.0",
-    "babel-eslint":"^7.2.3",
-    "babel-loader":"^7.1.1",
-    "babel-preset-env":"^1.6.0",
-    "eslint":"^4.1.1",
-    "eslint-loader":"^1.8.0",
-    "fs-extra":"^3.0.1",
-    "rimraf":"^2.6.2",
-    "webpack":"^3.0.0",
-    "webpack-dev-server":"^2.8.2"
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.25.0",
+    "babel-eslint": "^7.2.3",
+    "babel-loader": "^7.1.1",
+    "babel-preset-env": "^1.6.0",
+    "eslint": "^4.1.1",
+    "eslint-loader": "^1.8.0",
+    "fs-extra": "^3.0.1",
+    "rimraf": "^2.6.2",
+    "webpack": "^3.0.0",
+    "webpack-dev-server": "^2.8.2"
   },
-  "files":[
+  "files": [
     "lib"
   ]
 }
