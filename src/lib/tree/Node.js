@@ -52,6 +52,10 @@ Node.prototype.getChildAt = function(key){
 	return this.children[key];
 };
 
+Node.prototype.getChildren = function(){
+	return this.children;
+};
+
 Node.prototype.remove = function (key){
 	if(this.children[key]){
 		delete this.children[key];
