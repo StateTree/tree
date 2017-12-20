@@ -40,7 +40,16 @@ Tree.prototype.insert = function ( childValue, parentKey, childKey,callback){
 	return null;
 };
 
-
+Tree.prototype.getChildrenForNode = function (key){
+	if(this._keymap){
+		const parentNode =  this._keymap[key];
+		if(parentNode){
+			return parentNode.getChildren()
+		}
+		return null;
+	}
+	return null;
+};
 
 Tree.prototype.search = function (key){
 	if(this._keymap){

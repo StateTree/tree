@@ -1,6 +1,6 @@
 {
   "name": "tree",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "",
   "main": "lib/tree.js",
   "scripts": {
@@ -12,7 +12,7 @@
     "release:breakingchange": "npm version major -m 'Bumped major version number'",
     "release:bugfix": "npm version patch -m 'Bumped patch version number'",
     "release:feature": "npm version minor -m 'Bumped minor version number'",
-    "release:master": "git checkout master && git merge --squash develop && git commit -am 'Release Commit' && git push && git checkout develop",
+    "release:master": "git checkout master && git merge --squash --strategy-option theirs develop && git commit -am 'Release Commit' && git push && git checkout develop",
     "start": "webpack-dev-server --progress --config webpack.config.js --open"
   },
   "author": "",
