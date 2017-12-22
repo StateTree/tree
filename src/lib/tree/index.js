@@ -8,13 +8,7 @@ export default class Tree {
 	}
 }
 
-Tree.prototype.insert = function ( childValue, parentKey = null, childKey,callback){
-
-	if( (parentKey !== undefined) && typeof parentKey !== 'string'){
-		console.warn('parentKey can be only string if provided');
-		return;
-	}
-
+Tree.prototype.insert = function ( childValue, parentKey, childKey,callback){
 	if( (childKey !== undefined) && typeof childKey !== 'string'){
 		console.warn('childKey can be only string if provioded');
 		return;
@@ -22,7 +16,11 @@ Tree.prototype.insert = function ( childValue, parentKey = null, childKey,callba
 
 	if(this._keymap){
 		let parentNode = null;
-		if(parentKey !== null){
+		if(parentKey !== undefined){
+			if( typeof parentKey !== 'string'){
+				console.warn('parentKey can be only string if provided');
+				return;
+			}
 			parentNode = this._keymap[parentKey];
 			if(!parentNode && this.root){
 				console.warn('parent not found: ', parentKey);
