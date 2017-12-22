@@ -8,7 +8,7 @@ export default class Tree {
 	}
 }
 
-Tree.prototype.insert = function ( childValue, parentKey, childKey,callback){
+Tree.prototype.insert = function ( childValue, parentKey = null, childKey,callback){
 
 	if( (parentKey !== undefined) && typeof parentKey !== 'string'){
 		console.warn('parentKey can be only string if provided');
@@ -22,7 +22,7 @@ Tree.prototype.insert = function ( childValue, parentKey, childKey,callback){
 
 	if(this._keymap){
 		let parentNode = null;
-		if(parentKey !== undefined || parentKey !== null){
+		if(parentKey !== null){
 			parentNode = this._keymap[parentKey];
 			if(!parentNode && this.root){
 				console.warn('parent not found: ', parentKey);
