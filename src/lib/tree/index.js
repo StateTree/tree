@@ -21,10 +21,13 @@ Tree.prototype.insert = function ( childValue, parentKey, childKey,callback){
 	}
 
 	if(this._keymap){
-		const parentNode = this._keymap[parentKey];
-		if(!parentNode && this.root){
-			console.warn('parent not found: ', parentKey);
-			return;
+		let parentNode = null;
+		if(parentKey !== undefined || parentKey !== null){
+			parentNode = this._keymap[parentKey];
+			if(!parentNode && this.root){
+				console.warn('parent not found: ', parentKey);
+				return;
+			}
 		}
 
 		const newChild = new Node(childValue, childKey);
